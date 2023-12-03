@@ -1,0 +1,48 @@
+20:21:17 **** Incremental Build of configuration Debug for project Zybo-Z7-10-HDMI ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+' '
+make --no-print-directory main-build
+'Building file: ../src/video_demo.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -DDEBUG -Wall -O0 -g3 -II:/Zybo-Z7/sw/src/Zybo-Z7-10-HDMI/src -c -fmessage-length=0 -MT"src/video_demo.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Users/Serene_2/OneDrive/Desktop/workspace3/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/video_demo.d" -MT"src/video_demo.o" -o "src/video_demo.o" "../src/video_demo.c"
+In file included from C:/Users/Serene_2/OneDrive/Desktop/workspace3/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xaxivdma_i.h:52,
+                 from C:/Users/Serene_2/OneDrive/Desktop/workspace3/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xaxivdma.h:297,
+                 from ../src/video_capture/video_capture.h:75,
+                 from ../src/video_demo.h:32,
+                 from ../src/video_demo.c:28:
+C:/Users/Serene_2/OneDrive/Desktop/workspace3/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xdebug.h:21:2: warning: #warning DEBUG is enabled [-Wcpp]
+   21 | #warning DEBUG is enabled
+      |  ^~~~~~~
+../src/video_demo.c: In function 'DemoRun':
+../src/video_demo.c:281:25: warning: implicit declaration of function 'EdgeDetection' [-Wimplicit-function-declaration]
+  281 |                         EdgeDetection(pFrames[videoCapt.curFrame], pFrames[nextFrame], videoCapt.timing.HActiveVideo, videoCapt.timing.VActiveVideo, DEMO_STRIDE);
+      |                         ^~~~~~~~~~~~~
+../src/video_demo.c: At top level:
+../src/video_demo.c:470:6: warning: conflicting types for 'EdgeDetection'; have 'void(u8 *, u8 *, u32,  u32,  u32)' {aka 'void(unsigned char *, unsigned char *, long unsigned int,  long unsigned int,  long unsigned int)'}
+  470 | void EdgeDetection(u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride)
+      |      ^~~~~~~~~~~~~
+../src/video_demo.c:281:25: note: previous implicit declaration of 'EdgeDetection' with type 'void(u8 *, u8 *, u32,  u32,  u32)' {aka 'void(unsigned char *, unsigned char *, long unsigned int,  long unsigned int,  long unsigned int)'}
+  281 |                         EdgeDetection(pFrames[videoCapt.curFrame], pFrames[nextFrame], videoCapt.timing.HActiveVideo, videoCapt.timing.VActiveVideo, DEMO_STRIDE);
+      |                         ^~~~~~~~~~~~~
+../src/video_demo.c: In function 'DemoGetInactiveFrame':
+../src/video_demo.c:446:1: warning: control reaches end of non-void function [-Wreturn-type]
+  446 | }
+      | ^
+'Finished building: ../src/video_demo.c'
+' '
+'Building target: Zybo-Z7-10-HDMI.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Users/Serene_2/OneDrive/Desktop/workspace3/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bsplib/lib -o "Zybo-Z7-10-HDMI.elf"  ./src/video_capture/video_capture.o  ./src/timer_ps/timer_ps.o  ./src/intc/intc.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/video_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Zybo-Z7-10-HDMI.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Zybo-Z7-10-HDMI.elf  |tee "Zybo-Z7-10-HDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 100235	   3496	24909072	25012803	17daa43	Zybo-Z7-10-HDMI.elf
+'Finished building: Zybo-Z7-10-HDMI.elf.size'
+' '
+
+20:21:18 Build Finished (took 916ms)
+
